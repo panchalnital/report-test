@@ -8,8 +8,8 @@ use App\Http\Controllers\StoreController;
 //     return view('welcome');
 // });
 
-Route::get('/',[OrderController::class,'index']);
-Route::get('/search',[OrderController::class,'search']);
+Route::get('/monthly-sales-by-region',[OrderController::class,'index'])->name('/');;
+Route::get('/search',[OrderController::class,'search'])->name('search');;
 
-Route::get('/store',[StoreController::class,'index']);
-Route::get('/storesearch',[StoreController::class,'search']);
+Route::get('/top-categories-by-store',[StoreController::class,'index'])->name('store');;
+Route::get('/storesearch',[StoreController::class,'search'])->name('storesearch');;

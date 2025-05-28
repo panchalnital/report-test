@@ -22,12 +22,8 @@ class StoreController extends Controller
     public function search(Request $request){
 
         $search = $request->search;
-        $search1=(string)"$search-01-01";
-        $lastdate=(string)"$search-12-31";
-
-
-        //$endDate = Carbon::now()->toDateString();
-       // $startDate = Carbon::now()->subMonths(3)->toDateString();
+        $lastdate = date("Y-m-d", strtotime($search));
+        $search1 = date('Y-m-d', strtotime("-3 months", strtotime($lastdate)));
 
         $stores=DB::table('orders as o')
         ->join('products as p', 'o.product_id', '=', 'p.id')

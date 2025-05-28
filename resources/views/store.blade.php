@@ -6,6 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>KC report</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css" integrity="sha512-SbiR/eusphKoMVVXysTKG/7VseWii+Y3FdHrt0EpKgpToZeemhqHeZeLWLhJutz/2ut2Vw1uQEj2MbRF+TVBUA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 </head>
 <body>
 
@@ -23,13 +26,7 @@
                 <div class="form-group">
                     <form method="get" action="/storesearch">
                         <div class="input-group">
-                            <select  class="form-control" name="search" placeholder="Search..." value="{{ isset($search) ? $search : ''}}">
-
-                                <option value="2025">2025</option>
-                                <option value="2024">2024</option>
-                                <option value="2023">2023</option>
-                                <option value="2022">2022</option>  
-                            </select>      
+                        <input class="form-control" type="text" name="search" id="datepicker" value="{{ isset($search) ? $search : ''}}" />
                             <button type="submit" class="btn btn-primary">Search</button>
                         </div>
                     </form>
@@ -66,4 +63,13 @@
     </div>
    
 </body>
+<script>
+
+$( "#datepicker" ).datepicker({
+	// hideIfNoPrevNext: true,
+    //             minDate: '-3M',
+    //             maxDate: '+90D'
+});
+
+</script>
 </html>
