@@ -28,3 +28,16 @@ View
 ```
 php artisan migrate
 ```
+
+## After the installation is complete, you can start the application using the following command:
+View 
+```
+php artisan serve
+```
+
+## endpoint for each report
+-Monthly Sales by Region http://127.0.0.1:8000/monthly-sales-by-region
+-Top Categories by Store http://127.0.0.1:8000/top-categories-by-store
+
+## dabatase script 
+-db/cycle_test.sql
